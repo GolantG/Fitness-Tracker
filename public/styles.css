@@ -77,3 +77,19 @@ button:hover {
 form {
     display: inline;
 }
+
+.nav-button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: #6eb2fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+.past-training {
+    opacity: 0.5;
+}
