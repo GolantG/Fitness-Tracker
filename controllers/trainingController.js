@@ -47,11 +47,15 @@ exports.showStats = async (req, res) => {
         };
     }
 
+    const now = new Date();
     const trainings = await Training.find(filter);
+    const pastTrainings = trainings.filter(t => t.date < now);
     const stats = {
-        count: trainings.length,
-        duration: trainings.reduce((sum, t) => sum + t.duration, 0)
+        count: pastTrainings.length,
+        duration: pastTrainings.reduce((sum, t) => sum + t.duration, 0)
     };
 
-    res.render('stats', { stats, startDate, endDate });
+    res.render('stats', { stats, startDate, endDate, pastTrainings });
 };
+
+

@@ -26,9 +26,9 @@
   </div>
 
   <div>
-    <label for="date">Date:</label>
-    <input type="date" name="date" id="date" required 
-       value="<%= new Date(training.date).toISOString().split('T')[0] %>">
+    <label for="date"><strong>Date and Time: </strong></label>
+    <input type="datetime-local" name="date" id="date" required
+      value="<%= new Date(training.date).toISOString().slice(0,16) %>">
   </div>
 
   <button type="submit">Update</button>

@@ -2,13 +2,17 @@
 
 <form action="/stats" method="GET">
   <label for="startDate"><strong>From:</strong></label>
-  <input type="date" name="startDate" id="startDate" value="<%= startDate || '' %>" required>
+  <input type="datetime-local" name="startDate" id="startDate"
+    value="<%= startDate ? new Date(startDate).toISOString().slice(0,16) : '' %>" required>
 
   <label for="endDate"><strong>To:</strong></label>
-  <input type="date" name="endDate" id="endDate" value="<%= endDate || '' %>" required>
+  <input type="datetime-local" name="endDate" id="endDate"
+    value="<%= endDate ? new Date(endDate).toISOString().slice(0,16) : '' %>" required>
 
   <button type="submit">Show Statistics</button>
 </form>
 
 <p><strong>Total Trainings: </strong><%= stats.count %></p>
 <p><strong>Total Duration: </strong><%= stats.duration %> minutes</p>
+
+<button type="button" onclick="window.history.back()">Back</button>
