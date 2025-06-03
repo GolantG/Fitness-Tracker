@@ -1,0 +1,26 @@
+<h2>All Trainings</h2>
+
+<% if (trainings.length === 0) { %>
+    <p>No trainings added yet.</p>
+<% } else { %>
+    <div class="training-list">
+        <% trainings.forEach(t => { %>
+            <div class="training-item">
+                <p>
+                    <strong>Type:</strong> <%= t.type %><br>
+                    <strong>Intensity:</strong> <%= t.intensity %><br>
+                    <strong>Duration:</strong> <%= t.duration %> minutes
+                    <strong>Date:</strong> <%= new Date(t.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                </p>
+                <div class="actions">
+                    <a href="/edit/<%= t._id %>">
+                        <button>Edit</button>
+                    </a>
+                    <form action="/delete/<%= t._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this training?')">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+<% } %>

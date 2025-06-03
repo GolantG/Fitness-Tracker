@@ -1,0 +1,36 @@
+<h2 class="form-title">Add New Training</h2>
+
+<form action="/add" method="POST" class="add-form">
+  <div>
+    <label for="type"><strong>Type: </strong></label>
+    <select name="type" id="type" required>
+      <option value="Select type">Select type</option>
+      <option value="Cardio">Cardio</option>
+      <option value="Strength">Strength</option>
+      <option value="Flexibility">Flexibility</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>  
+
+  <div>
+    <label for="intensity"><strong>Intensity: </strong></label>
+    <select name="intensity" id="intensity" required>
+      <option value="Select intensity">Select intensity</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="duration"><strong>Duration (minutes): </strong></label>
+    <input type="number" name="duration" id="duration" min="15" step="15" required>
+  </div>
+
+  <div>
+    <label for="date"><strong>Training Date: </strong></label>
+    <input type="date" name="date" id="date" required>
+  </div>
+
+    <button type="submit">Add Training</button>
+</form>

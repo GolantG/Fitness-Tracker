@@ -1,0 +1,14 @@
+<h2>Training Statistics</h2>
+
+<form action="/stats" method="GET">
+  <label for="startDate"><strong>From:</strong></label>
+  <input type="date" name="startDate" id="startDate" value="<%= startDate || '' %>" required>
+
+  <label for="endDate"><strong>To:</strong></label>
+  <input type="date" name="endDate" id="endDate" value="<%= endDate || '' %>" required>
+
+  <button type="submit">Show Statistics</button>
+</form>
+
+<p><strong>Total Trainings: </strong><%= stats.count %></p>
+<p><strong>Total Duration: </strong><%= stats.duration %> minutes</p>

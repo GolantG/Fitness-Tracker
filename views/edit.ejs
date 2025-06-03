@@ -1,0 +1,35 @@
+<h2>Edit Training</h2>
+
+<form action="/edit/<%= training._id %>" method="POST">
+  <div>
+    <label for="type"><strong>Type: </strong></label>
+    <select name="type" id="type" required>
+      <option value="Cardio" <%= training.type === 'Cardio' ? 'selected' : '' %>>Cardio</option>
+      <option value="Strength" <%= training.type === 'Strength' ? 'selected' : '' %>>Strength</option>
+      <option value="Flexibility" <%= training.type === 'Flexibility' ? 'selected' : '' %>>Flexibility</option>
+      <option value="Other" <%= training.type === 'Other' ? 'selected' : '' %>>Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="intensity"><strong>Intensity: </strong></label>
+    <select name="intensity" id="intensity" required>
+      <option value="Low" <%= training.intensity === 'Low' ? 'selected' : '' %>>Low</option>
+      <option value="Medium" <%= training.intensity === 'Medium' ? 'selected' : '' %>>Medium</option>
+      <option value="High" <%= training.intensity === 'High' ? 'selected' : '' %>>High</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="duration"><strong>Duration (minutes): </strong></label>
+    <input type="number" name="duration" id="duration" defoult="15" min="15" step="15" value="<%= training.duration %>" required />
+  </div>
+
+  <div>
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required 
+       value="<%= new Date(training.date).toISOString().split('T')[0] %>">
+  </div>
+
+  <button type="submit">Update</button>
+</form>
