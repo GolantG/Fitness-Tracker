@@ -34,7 +34,13 @@ npm install electron --save-dev
 }
 ```
 
-3. **Uruchomienie aplikacji jako desktop**
+3. **Dodanie MongoDB Atlas URI do pliku `.env`**
+
+```ini
+MONGODB_URI=your_mongodb_connection_string
+```
+
+4. **Uruchomienie aplikacji jako desktop**
 
 ```bash
 npm run electron
